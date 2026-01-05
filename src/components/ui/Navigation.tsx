@@ -33,7 +33,7 @@ export default function Navigation() {
             : "py-6"}
         `}
       >
-        <div className="mx-auto w-full max-w-[1400px] px-6 flex items-center justify-between">
+        <div className="mx-auto w-full max-w-[1400px] container-padding flex items-center justify-between">
           
           {/* LOGO */}
             <a
@@ -70,6 +70,7 @@ export default function Navigation() {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden flex flex-col gap-1.5 z-[110] interactive"
+            aria-label="Toggle menu"
           >
             <motion.span
               animate={isMenuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
@@ -95,7 +96,7 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[90] bg-black flex flex-col justify-center gap-10 pl-16"
+            className="fixed inset-0 z-[90] bg-black flex flex-col justify-center gap-10 px-6"
           >
             {["Services", "Process", "About", "Results"].map((item) => (
                 <a
@@ -107,16 +108,16 @@ export default function Navigation() {
                 >
                   {item}
                 </a>
-              ))}
+            ))}
             <a
-                href="/#contact"
-                onClick={() => setIsMenuOpen(false)}
-                className="mt-6 inline-block w-fit px-14 py-5
-                  bg-[#C9A962] text-black text-[12px]
-                  uppercase tracking-[0.35em] font-black"
-              >
-                Book a Call
-              </a>
+              href="/#contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="mt-6 inline-block w-fit px-10 py-4
+                bg-[#C9A962] text-black text-[12px]
+                uppercase tracking-[0.35em] font-black"
+            >
+              Book a Call
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
